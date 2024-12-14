@@ -1,27 +1,82 @@
-# SistemaPonto
+# Sistema de Controle de Ponto com Angular e Firebase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+## Descrição
+Este projeto é um sistema de controle de ponto desenvolvido respeitando alguns requisitos técnicos. Ele permite autenticação de usuários, cadastro e listagem de usuários, e marcação de ponto com captura do horário do servidor utilizando Firebase Cloud Functions.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Tela de Login
+- Autenticação de usuários cadastrados com e-mail e senha.
 
-## Code scaffolding
+### Tela de Cadastro e Listagem de Usuários
+- Cadastro de novos usuários com os seguintes campos:
+  - **Nome**
+  - **CPF**
+  - **E-mail**
+  - **Password**
+  - **Código** (4 dígitos numéricos)
+- Listagem de usuários cadastrados para administração.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Tela de Marçação de Ponto
+- Entrada do código do usuário cadastrado para registrar o ponto.
+- O horário de registro é capturado diretamente do servidor por meio de Firebase Cloud Functions.
 
-## Build
+## Tecnologias Utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Frontend
+- **Angular 17.+**
+  - Framework utilizado para a construção da interface do usuário.
+- **TypeScript**
+  - Linguagem principal do desenvolvimento.
 
-## Running unit tests
+### Backend
+*****Necessita do node na versão 18.+ para emular e instalar pacotes do ambiente*****
+- **Firebase 10.+**
+  - Autenticação de usuários.
+  - Armazenamento de dados no Firestore.
+  - Cloud Functions para captura do horário do servidor.
+- **Firebase Tools**
+  - Ferramenta CLI para configuração e deploy das funções no Firebase.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Como Executar o Projeto
 
-## Running end-to-end tests
+### Requisitos
+- **Node.js** (recomendado: gerenciado via NVM)
+- **Angular CLI** 17+
+- **Firebase CLI** 10+
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Passos para Executar
+1. Clone o repositório:
+   ```bash
+   git clone <URL-do-repositorio>
+   cd <nome-do-repositorio>
+   ```
 
-## Further help
+2. Instale as dependências do projeto:
+   ```bash
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Configure o Firebase no projeto:
+   - Substitua os parâmetros do arquivo `environment.ts` com as credenciais do seu projeto Firebase.
+
+4. Inicie o servidor de desenvolvimento:
+   ```bash
+   ng serve
+   ```
+5. Acesse o aplicativo em: [http://localhost:4200](http://localhost:4200)
+
+6. Siga até o respositorio e instale as dependências. 
+   ```bash
+   cd <firerbase-functions\functions>
+   npm install
+   ```
+
+7. Inicie as funções no Firebase utilizando o emulador:
+   ```bash
+   npm run serve
+   ou
+   firebase emulators:start
+   ```
+
+
