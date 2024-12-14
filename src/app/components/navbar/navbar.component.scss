@@ -1,0 +1,41 @@
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+
+    .nav {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        cursor: pointer;
+
+        li,
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        li:hover,
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.nav-container {
+    display: flex;
+    align-items: baseline;
+}
+
+span {
+    color: #fff;
+}
+
+
+.custom-container {
+    max-width: 1300px;
+    /* ou qualquer valor desejado */
+    width: 100%;
+    margin: 0 auto;
+    /* centraliza */
+}

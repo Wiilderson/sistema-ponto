@@ -1,0 +1,77 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4 shadow-lg w-50">
+    <h2 class="card-title text-center mb-4">Cadastro de Usuário</h2>
+    <form (ngSubmit)="registerUser()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nome</label>
+        <input
+          id="name"
+          [(ngModel)]="user.name"
+          name="name"
+          type="text"
+          class="form-control"
+          required
+          #name="ngModel"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input
+          id="cpf"
+          [(ngModel)]="user.cpf"
+          name="cpf"
+          type="text"
+          class="form-control"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input
+          id="email"
+          [(ngModel)]="user.email"
+          name="email"
+          type="email"
+          class="form-control"
+          required
+          #email="ngModel"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Senha</label>
+        <input
+          id="password"
+          [(ngModel)]="user.password"
+          name="password"
+          type="password"
+          class="form-control"
+          minlength="6"
+          required
+          #password="ngModel"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="code" class="form-label"
+          >Código (4 dígitos numéricos)</label
+        >
+        <input
+          id="code"
+          [(ngModel)]="user.code"
+          name="code"
+          type="number"
+          class="form-control"
+          maxlength="4"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+    </form>
+    <div class="text-center mt-3">
+      <button (click)="navigateToLogin()" class="btn btn-danger w-100">
+        <span class="d-flex align-items-center justify-content-center">
+          <i class="bi bi-person-plus me-2"></i> Cancelar
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

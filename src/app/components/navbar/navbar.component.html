@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div
+    class="custom-container d-flex justify-content-between align-items-center"
+  >
+    <div class="navbar-brand">
+      <span>Bem vindo, {{ user.email }}!</span>
+    </div>
+    <ul class="nav d-flex">
+      <li><a routerLink="/listagem" class="nav-link">Lista</a></li>
+      <li><a routerLink="/ponto" class="nav-link">Ponto</a></li>
+      <li class="nav-link" (click)="logout()">Sair</li>
+    </ul>
+  </div>
+</nav>
